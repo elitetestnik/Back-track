@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<install version="1.5" type="plugin" group="vmpayment" method="upgrade">
+    <name>PayPal Payments Pro 3D - SSC</name>
+    <creationDate>29 May 2013</creationDate>
+    <author>SSC</author>
+    <authorUrl>http://www.online-store.co.uk/virtuemart2/paypal_payments_pro.html</authorUrl>
+    <copyright>Copyright (C) 2013.</copyright>
+    <license></license>
+    <version>1.0.5</version>
+    <description><![CDATA[
+    
+<span style="font:14px arial">
+<b>PayPal Payments Pro 3D Plugin  1.0.5<br />
+</b>
+<br/>
+You must enable this plugin, using the Plugin Manager before it can be viewed in Virtuemart.
+<br/>
+<br/>
+</span>
+<span style="font:14px arial">
+<a href="index.php?filter_search=PayPal+Payments+Pro+3D+-+SSC&option=com_plugins&view=plugins">Click here to enable plugin</a>
+</span>
+<span style="font:14px arial">
+<br />
+<br />
+<a href="http://plugins.online-store.co.uk/paypal_payments_pro.html">Setup Instructions</a>
+<br/>
+<br/>
+</span>
+]]>
+    </description>
+
+    <files>
+	<filename plugin="paypalpaymentspro3dssc">paypalpaymentspro3dssc.php</filename>
+	<filename>XMLParser.php</filename>
+	<filename>util.js</filename>
+	<filename>style.css</filename>
+	<filename>CentinelUtility.php</filename>
+	<filename>CentinelErrors.php</filename>
+	<filename>CentinelConfig.php</filename>
+	<filename>CentinelClient.php</filename>
+	<filename>elements/paypalpaymentspro3dssccurl.php</filename>
+    </files>
+    
+    <media folder="images" destination="../images/stories/virtuemart/payment">
+    <filename>united_kingdom_card_logos_ssc.gif</filename>
+	<filename>united_states_card_logos_ssc.gif</filename>
+	<filename>canadian_card_logos_ssc.gif</filename>
+	</media>   
+    
+    <languages>
+	<language tag="en-GB">en-GB.plg_vmpayment_paypalpaymentspro3dssc.ini</language>
+    </languages>
+        
+        
+    <params addpath="/plugins/vmpayment/paypalpaymentspro3dssc/elements" />    
+    <params addpath="/administrator/components/com_virtuemart/elements">
+	<param type="vmjpluginwarning" />
+	<param type="paypalpaymentspro3dssccurl" />
+	
+<param   type="spacer" default="Payments Pro parameters (1.0.5)" level="level1" />
+
+
+<!--
+<param   type="spacer" default="" level="level1" />
+<param   type="spacer" default="&lt;span style='font-family: Arial, Helvetica, sans-serif; font-size: small'&gt;This is a working demo of the PayPal Payments pro Plugin&lt;/span&gt;" level="level1" />   
+<param   type="spacer" default="" level="level1" />
+<param   type="spacer" default="&lt;span style='font-family: Arial, Helvetica, sans-serif; font-size: small'&gt;Live API Usernames will not work with this demo.&lt;/span&gt;" level="level1" />
+<param   type="spacer" default="" level="level1" />
+<param   type="spacer" default="&lt;span style='font-family: Arial, Helvetica, sans-serif; font-size: small'&gt;To test this plugin, get a free sandbox account from &lt;a href='http://developer.paypal.com'&gt; http://developer.paypal.com&lt;/a&gt;" level="level1" />
+<param   type="spacer" default="&lt;span style='font-family: Arial, Helvetica, sans-serif; font-size: small'&gt;Sign up for both a merchant and customer account.&lt;/span&gt;" level="level1" />
+<param   type="spacer" default="&lt;span style='font-family: Arial, Helvetica, sans-serif; font-size: small'&gt;The merchant account will give you a free sandbox API Username.&lt;/span&gt;" level="level1" />
+<param   type="spacer" default="&lt;span style='font-family: Arial, Helvetica, sans-serif; font-size: small'&gt;The customer account will give you a credit card number to use with the store&lt;/span&gt;" level="level1" />
+<param   type="spacer" default="" level="level1" />
+-->
+
+<!--
+<param   type="spacer" default="Live Account is disabled in Demo. Use Sandbox Instead" level="level1" />
+<param   type="spacer" default="" level="level1" />
+-->
+
+
+<param type="text" name="ssc_api_username"  size="50" label="VMPAYMENT_PPP_3D_LIVE_USERNAME" default="" description="" />
+
+<param type="text" name="ssc_api_password"  size="50" label="VMPAYMENT_PPP_3D_LIVE_PASSWORD" default="" description="" />
+
+<param type="text" name="ssc_api_signature"  size="50" label="VMPAYMENT_PPP_3D_LIVE_SIGNATURE" default="" description="" />
+
+<param type="spacer" default="" level="level1" />
+
+<param name="ssc_environment" type="list" default="live" label="VMPAYMENT_PPP_3D_TYPE" description="">
+	<option value="live">VMPAYMENT_PPP_3D_LIVE</option>
+    <option value="sandbox">VMPAYMENT_PPP_3D_SANDBOX</option>
+</param>
+
+<param type="spacer" default="" level="level1" />
+
+<param   type="spacer" default="VMPAYMENT_PPP_3D_SANDBOX_PARAMETERS" level="level1" />
+
+<param type="text" name="ssc_api_sb_username"  size="50" label="VMPAYMENT_PPP_3D_SANDBOX_USERNAME" default="" description="" />
+
+<param type="text" name="ssc_api_sb_password"  size="50" label="VMPAYMENT_PPP_3D_SANDBOX_PASSWORD" default="" description="" />
+
+<param type="text" name="ssc_api_sb_signature"  size="50" label="VMPAYMENT_PPP_3D_SANDBOX_SIGNATURE" default="" description="" />
+
+<param type="spacer" default="" level="level1" />
+
+<param name="ssc_payment_action" type="list" default="Sale" label="VMPAYMENT_PPP_3D_PAYMENT_ACTION" description="">
+	<option value="Sale">VMPAYMENT_PPP_3D_SALE</option>
+    <option value="Authorization">VMPAYMENT_PPP_3D_AUTHORIZATION</option>
+</param>
+
+<param type="spacer" default="" level="level1" />
+
+<!-- /images/stories/virtuemart/payment 
+/plugins/vmpayment/paypalpaymentspro3dssc/assets
+-->
+          	
+             
+<!--
+
+<param name="payment_logos" type="list" default="united_states_card_logos_ssc.gif" label="CC Cards" description="">
+	<option value="united_states_card_logos_ssc.gif">United States</option>
+    <option value="united_kingdom_card_logos_ssc.gif">United Kingdom</option>
+    <option value="canadian_card_logos_ssc.gif">Canadian</option>
+</param>
+
+-->
+             	
+	
+<param type="spacer" default="" level="level1" />
+
+	   <!--   BY DEFAULT paypal currency= vendor currency -->
+	   
+<param name="ssc_merchant_country" type="list" default="US" label="VMPAYMENT_PPP_3D_MERCHANTS_COUNTRY" description="">
+	<option value="US">United States</option>
+    <option value="UK">United Kingdom</option>
+    <option value="CA">Canada</option>
+</param>
+
+
+
+	<param type="spacer" default="" level="level1" />
+
+	   <!--   BY DEFAULT paypal currency= vendor currency -->
+	   
+	   <param name="payment_currency" type="vmacceptedcurrency" default="" label="VMPAYMENT_PPP_3D_CURRENCY" description="" />
+
+
+     <!-- 
+	<param name="countries" type="vmcountries"  scope="com_virtuemart" default="" label="Countries" description=""/>
+	-->
+	
+	   <!-- 
+	<param name="min_amount" type="text"  label="VMPAYMENT_PAYPAL_MIN_AMOUNT" description="VMPAYMENT_PAYPAL_MIN_AMOUNT_EXPLAIN" />
+	<param name="max_amount" type="text"  label="VMPAYMENT_PAYPAL_MAX_AMOUNT" description="VMPAYMENT_PAYPAL_MAX_AMOUNT_EXPLAIN" />
+	<param name="cost_per_transaction" type="text"  label="VMPAYMENT_PAYPAL_COST_PER_TRANSACTION" description="VMPAYMENT_PAYPAL_COST_PER_TRANSACTION_EXPLAIN" />
+	<param name="cost_percent_total" type="text"  label="VMPAYMENT_PAYPAL_COST_PERCENT_TOTAL" description="VMPAYMENT_PAYPAL_COST_PERCENT_TOTAL_EXPLAIN" />
+	<param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="VMPAYMENT_PAYPAL_TAX" description="VMPAYMENT_PAYPAL_TAX_EXPLAIN" />
+	 -->
+	<param type="spacer" default="" level="level1" />
+	
+	<param name="ssc_centinel" type="radio" default="0" label="VMPAYMENT_PPP_3D_ENABLE_3D_SECURE" description="" >
+	   <option value="0">VMPAYMENT_PPP_3D_NO</option>
+	   <option value="1">VMPAYMENT_PPP_3D_YES</option>
+	</param>
+	
+    <param type="text" name="ssc_MerchantId"  size="50" label="VMPAYMENT_PPP_3D_SECURE_MERCHANT_ID" default="" description="" />    
+    <param type="text" name="ssc_ProcessorId"  size="50" label="VMPAYMENT_PPP_3D_SECURE_PROCESSOR_ID" default="" description="" />
+     
+    <param type="text" name="ssc_live_TransactionPwd"  size="50" label="VMPAYMENT_PPP_3D_SECURE_LIVE_TRANSACTION_PASSWORD" default="" description="" />
+    <param type="text" name="ssc_test_TransactionPwd"  size="50" label="VMPAYMENT_PPP_3D_SECURE_TEST_TRANSACTION_PASSWORD" default="" description="" />
+  
+  
+  	<param type="spacer" default="" level="level1" />
+
+<param name="ssc_noauthenticate" type="list" default="0" label="3D Secure Test Case 10" description="" >
+	   <option value="0">Retain Liability</option>
+    <option value="1">Prompt for another form of payment</option>
+    </param>
+
+
+	<param type="spacer" default="" level="level1" />
+	<param type="spacer" default="Payment Page" level="level1" />
+	<param name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_PPP_3D_STATUS_PENDING" description="" />
+	<param name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_PPP_3D_STATUS_SUCCESS" description="" />
+	<param name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_PPP_3D_STATUS_CANCELED" description="" />
+	<param type="spacer" default="" level="level1" />
+
+
+
+<!-- -->
+
+<param name="payment_logos" type="vmfiles" label="VMPAYMENT_PPP_3D_PAYMENT_LOGOS"
+   	description="Payment Logos"
+   	directory="/images/stories/virtuemart/payment"
+   	default="default" hide_default="1" hide_none="1"
+   	stripext="0"  exclude="^_" 
+	/>
+
+<!--
+filter=".*_logos\.gif"
+<param type="spacer" default="" level="level1" />
+	<param name="cost_per_transaction" type="text"  label="Cost Per Transactiion" description="" />
+	<param name="cost_percent_total" type="text"  label="Percent Total" description="" />
+	<param name="tax_id" type="vmtaxes" scope="com_virtuemart"  label="Tax" description="" />
+	<param type="spacer" default="" level="level1" />
+ -->
+<param type="spacer" default="" level="level1" />
+
+	<param name="debug" type="radio" default="0" label="VMPAYMENT_PPP_3D_DEBUG" description="" >
+	    <option value="0">VMPAYMENT_PPP_3D_NO</option>
+	    <option value="1">VMPAYMENT_PPP_3D_YES</option>
+	</param>
+
+    </params>
+
+
+</install>
